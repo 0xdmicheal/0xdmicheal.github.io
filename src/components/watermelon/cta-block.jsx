@@ -30,14 +30,16 @@ export function CtaBlock() {
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <a
             href="/contact.html"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#141311] px-6 py-3 text-sm font-semibold text-[#f3eee4] shadow-[inset_0_0.5px_0px_rgba(255,255,255,0.35),inset_0_-0.5px_0px_rgba(0,0,0,0.3)] sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1e4bff] px-6 py-3 text-sm font-semibold sm:w-auto"
+            style={{ color: "#fff" }}
           >
             Start a project
             <FiArrowRight className="text-base transition-transform duration-200 group-hover:translate-x-1" />
           </a>
           <a
             href="/work.html"
-            className="inline-flex w-full items-center justify-center rounded-md bg-[#fffaf2] px-6 py-3 text-sm font-medium text-[#3c3933] shadow-[inset_0_0.5px_0px_rgba(255,255,255,0.8),0_0_0_1px_rgba(0,0,0,0.08)] sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[#fffaf2] px-6 py-3 text-sm font-medium sm:w-auto"
+            style={{ color: "#141311" }}
           >
             See selected work
           </a>

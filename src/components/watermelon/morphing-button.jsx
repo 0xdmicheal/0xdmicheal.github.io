@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-const springConfig = { type: "spring", stiffness: 240, damping: 18, mass: 1.1 };
+const spring = { type: "spring", stiffness: 240, damping: 18, mass: 1.1 };
 
 export function MorphingButton({
   buttonText = "Start a project",
@@ -35,58 +35,58 @@ export function MorphingButton({
   };
 
   return (
-    <motion.div
-      ref={containerRef}
-      layout
-      transition={springConfig}
-      style={{ borderRadius: 999 }}
-      className={`relative flex items-center overflow-hidden border border-[#141311] ${
-        isExpanded ? "bg-[#fffaf2] p-1" : "bg-[#1e4bff] p-0"
-      }`}
-    >
-      <AnimatePresence mode="popLayout">
-        {isExpanded && (
-          <motion.div
-            key="input"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0 }}
-            className="flex flex-1 items-center px-4"
-          >
-            <input
-              ref={inputRef}
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={placeholder}
-              className="w-52 bg-transparent text-base font-semibold text-[#141311] outline-none"
-              onKeyDown={(e) => {
-                if (e.key === "Enter") go();
-              }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <motion.button
+    <div ref={containerRef} className="relative h-11 w-[9.75rem] shrink-0">
+      <motion.div
         layout
-        type="button"
-        onClick={(e) => {
-          if (!isExpanded) {
-            e.stopPropagation();
-            setIsExpanded(true);
-          } else {
-            go();
-          }
-        }}
-        transition={springConfig}
-        className={`relative flex items-center justify-center rounded-full font-bold whitespace-nowrap outline-none ${
-          isExpanded
-            ? "bg-[#1e4bff] px-5 py-3 text-white"
-            : "bg-[#1e4bff] px-6 py-3.5 text-white"
+        transition={spring}
+        style={{ borderRadius: 9999, overflow: "hidden" }}
+        className={`absolute top-0 left-0 z-20 flex h-11 items-center rounded-full border border-[#141311] ${
+          isExpanded ? "bg-[#fffaf2] p-1" : "bg-[#1e4bff]"
         }`}
       >
-        <motion.span layout="position">{isExpanded ? "Send" : buttonText}</motion.span>
-      </motion.button>
-    </motion.div>
+        <AnimatePresence mode="popLayout">
+          {isExpanded && (
+            <motion.div
+              key="input"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              className="flex h-9 flex-1 items-center rounded-full px-4"
+            >
+              <input
+                ref={inputRef}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={placeholder}
+                className="h-9 w-52 rounded-full bg-transparent text-sm font-semibold text-[#141311] outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") go();
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <motion.button
+          layout
+          type="button"
+          onClick={(e) => {
+            if (!isExpanded) {
+              e.stopPropagation();
+              setIsExpanded(true);
+            } else {
+              go();
+            }
+          }}
+          transition={spring}
+          style={{ borderRadius: 9999 }}
+          className={`relative flex items-center justify-center rounded-full bg-[#1e4bff] px-5 text-sm font-semibold whitespace-nowrap text-white outline-none ${
+            isExpanded ? "h-9" : "h-11"
+          }`}
+        >
+          <motion.span layout="position">{isExpanded ? "Send" : buttonText}</motion.span>
+        </motion.button>
+      </motion.div>
+    </div>
   );
 }

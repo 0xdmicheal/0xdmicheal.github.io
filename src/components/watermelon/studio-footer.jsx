@@ -74,7 +74,7 @@ export function StudioFooter() {
           </motion.div>
           <nav
             aria-label="Footer"
-            className="grid w-full max-w-[540px] grid-cols-2 gap-y-8 sm:grid-cols-3"
+            className="grid w-full max-w-[540px] grid-cols-3 gap-x-3 gap-y-8"
           >
             {columns.map((col) => (
               <div key={col.title}>
@@ -97,35 +97,18 @@ export function StudioFooter() {
           </nav>
         </div>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ type: "spring", duration: 1.1, bounce: 0 }}
-        className="relative flex items-end justify-center overflow-hidden px-4 pt-10 md:pt-16"
-      >
-        <svg
-          className="h-auto w-full translate-y-2 select-none md:translate-y-4"
-          viewBox="0 0 900 110"
-          preserveAspectRatio="xMidYMid meet"
-          aria-label="Michael"
+      <div className="relative overflow-hidden px-3 pt-8 pb-0 md:px-6 md:pt-14">
+        <p
+          className="select-none text-center font-[Syne,system-ui,sans-serif] font-extrabold tracking-[-0.06em] text-[#e8e0cc]"
+          style={{
+            fontSize: "clamp(2.6rem, 14vw, 11rem)",
+            lineHeight: 0.78,
+            transform: "translateY(18%)",
+          }}
         >
-          <text
-            x="50%"
-            y="100%"
-            dominantBaseline="alphabetic"
-            textAnchor="middle"
-            textLength="95%"
-            lengthAdjust="spacing"
-            fill="#e8e0cc"
-            fontSize="150"
-            fontFamily="Syne, system-ui, sans-serif"
-            fontWeight="700"
-          >
-            MICHAEL
-          </text>
-        </svg>
-      </motion.div>
+          MICHAEL
+        </p>
+      </div>
     </footer>
   );
 }

@@ -30,7 +30,7 @@ export function StudioHero() {
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <a
               href="/work.html"
-              className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-[#141311] bg-[#fffaf2] px-5 text-sm font-semibold text-[#141311]"
+              className="group inline-flex h-11 items-center gap-2 rounded-full border border-[#141311] bg-[#fffaf2] px-5 text-sm font-semibold text-[#141311]"
             >
               See selected work
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
