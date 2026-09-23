@@ -14,6 +14,8 @@ export default defineConfig({
     host: true,
   },
   build: {
+    outDir: "docs",
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(root, "index.html"),
