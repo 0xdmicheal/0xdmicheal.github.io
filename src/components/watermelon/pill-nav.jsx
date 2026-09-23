@@ -17,7 +17,7 @@ export function PillNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+    <div className="nav-shell">
       <div className="pointer-events-auto w-full max-w-3xl">
         <div className="flex h-14 items-center justify-between gap-2 rounded-full border border-[#d5ccbc] bg-[#fffaf2]/90 pr-2 pl-5 shadow-[inset_0_1px_0_rgba(255,255,255,1),0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
           <a

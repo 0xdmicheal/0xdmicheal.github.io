@@ -33,6 +33,55 @@ html {
   overflow-x: hidden;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+.nav-shell {
+  view-transition-name: site-nav;
+}
+
+::view-transition-group(site-nav) {
+  z-index: 1000;
+}
+
+::view-transition-old(site-nav),
+::view-transition-new(site-nav) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation: wm-page-out 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  animation: wm-page-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  z-index: 2;
+}
+
+@keyframes wm-page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes wm-page-in {
+  from {
+    clip-path: circle(0 at 50% 4rem);
+  }
+  to {
+    clip-path: circle(150% at 50% 4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
 html,
 body {
   margin: 0;
