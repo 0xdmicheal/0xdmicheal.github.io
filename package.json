@@ -1,0 +1,25 @@
+{
+  "name": "michael-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Portfolio of Khureltulga Gantsetseg (Michael) — creative director & marketing designer",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "lucide-react": "^1.47.0",
+    "motion": "^13.4.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-icons": "^5.7.0"
+  }
+}

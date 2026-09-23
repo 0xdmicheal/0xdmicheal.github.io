@@ -1,0 +1,92 @@
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+
+const springConfig = { type: "spring", stiffness: 240, damping: 18, mass: 1.1 };
+
+export function MorphingButton({
+  buttonText = "Start a project",
+  placeholder = "Your email",
+  onSubmit,
+}) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [email, setEmail] = useState("");
+  const containerRef = useRef(null);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsExpanded(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (isExpanded && inputRef.current) inputRef.current.focus();
+  }, [isExpanded]);
+
+  const go = () => {
+    if (!email) return;
+    onSubmit?.(email);
+    setIsExpanded(false);
+    setEmail("");
+  };
+
+  return (
+    <motion.div
+      ref={containerRef}
+      layout
+      transition={springConfig}
+      style={{ borderRadius: 999 }}
+      className={`relative flex items-center overflow-hidden border border-[#141311] ${
+        isExpanded ? "bg-[#fffaf2] p-1" : "bg-[#1e4bff] p-0"
+      }`}
+    >
+      <AnimatePresence mode="popLayout">
+        {isExpanded && (
+          <motion.div
+            key="input"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            className="flex flex-1 items-center px-4"
+          >
+            <input
+              ref={inputRef}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={placeholder}
+              className="w-52 bg-transparent text-base font-semibold text-[#141311] outline-none"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") go();
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <motion.button
+        layout
+        type="button"
+        onClick={(e) => {
+          if (!isExpanded) {
+            e.stopPropagation();
+            setIsExpanded(true);
+          } else {
+            go();
+          }
+        }}
+        transition={springConfig}
+        className={`relative flex items-center justify-center rounded-full font-bold whitespace-nowrap outline-none ${
+          isExpanded
+            ? "bg-[#1e4bff] px-5 py-3 text-white"
+            : "bg-[#1e4bff] px-6 py-3.5 text-white"
+        }`}
+      >
+        <motion.span layout="position">{isExpanded ? "Send" : buttonText}</motion.span>
+      </motion.button>
+    </motion.div>
+  );
+}

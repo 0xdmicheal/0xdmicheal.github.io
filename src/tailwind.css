@@ -1,0 +1,16 @@
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-paper: #f3eee4;
+  --color-cream: #fffaf2;
+  --color-ink: #141311;
+  --color-muted: #3c3933;
+  --color-line: #d5ccbc;
+  --color-blue: #1e4bff;
+  --color-dark: #0e0d0b;
+}
