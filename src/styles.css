@@ -1163,6 +1163,39 @@ html.js-reveal .job.is-in::before {
   margin: 0 0 0.85rem;
 }
 
+.fit {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.fit img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.15rem;
+  background: #0e0d0b;
+}
+
+.fit-hero {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border-radius: 1.4rem;
+  background: #0e0d0b;
+}
+
+.fit-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .fit {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .gallery figure {
   margin: 0;
   background: #0e0d0b;
