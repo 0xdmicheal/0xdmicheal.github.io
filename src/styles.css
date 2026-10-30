@@ -1184,7 +1184,8 @@ html.js-reveal .job.is-in::before {
   background: #0e0d0b;
 }
 
-.fit-hero img {
+.fit-hero img,
+.fit-hero video {
   width: 100%;
   height: auto;
   display: block;

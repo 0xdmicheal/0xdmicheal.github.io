@@ -22,6 +22,7 @@ export default defineConfig({
         work: resolve(root, "work.html"),
         about: resolve(root, "about.html"),
         contact: resolve(root, "contact.html"),
+        ediinzasag: resolve(root, "work/ediinzasag.html"),
         insomnus: resolve(root, "work/insomnus.html"),
         mintpark: resolve(root, "work/mintpark.html"),
         ordinals: resolve(root, "work/ordinals.html"),

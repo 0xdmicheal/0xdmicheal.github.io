@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const layoutId = "featured-insomnus";
+const layoutId = "featured-ediinzasag";
 
 export function FeaturedCase() {
   const [open, setOpen] = useState(false);
@@ -18,8 +18,8 @@ export function FeaturedCase() {
           <motion.div layoutId={`${layoutId}-media`} className="relative h-[22rem] w-full sm:h-[28rem]">
             <motion.img
               layoutId={`${layoutId}-img`}
-              src="/img/insomnus/hero.jpg"
-              alt="Insomnus key art"
+              src="/img/ez/hero.jpg"
+              alt="EZ Эдийн засаг key art"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/25 to-transparent" />
@@ -29,13 +29,13 @@ export function FeaturedCase() {
               layoutId={`${layoutId}-kicker`}
               className="font-mono text-[10px] tracking-[0.18em] text-[#d6ff32] uppercase"
             >
-              Featured · 2025–now
+              Featured · 2026–now
             </motion.p>
             <motion.h2 layoutId={`${layoutId}-title`} className="mt-1 font-serif text-4xl text-[#f3eee4] sm:text-5xl">
-              Insomnus
+              EZ Эдийн засаг
             </motion.h2>
             <p className="mt-2 max-w-xl text-sm text-[#f3eee4]/75">
-              195,000+ registered users. Click to open the case.
+              A Mongolian newsroom on the economy and markets. Click to open the case.
             </p>
           </div>
         </motion.button>
@@ -66,7 +66,7 @@ export function FeaturedCase() {
               <motion.div layoutId={`${layoutId}-media`} className="relative h-56 shrink-0 sm:h-72">
                 <motion.img
                   layoutId={`${layoutId}-img`}
-                  src="/img/insomnus/hero.jpg"
+                  src="/img/ez/hero.jpg"
                   alt=""
                   className="h-full w-full object-cover"
                 />
@@ -76,10 +76,10 @@ export function FeaturedCase() {
                   layoutId={`${layoutId}-kicker`}
                   className="font-mono text-[10px] tracking-[0.18em] text-[#1e4bff] uppercase"
                 >
-                  Featured · 2025–now
+                  Featured · 2026–now
                 </motion.p>
                 <motion.h2 layoutId={`${layoutId}-title`} className="mt-1 font-serif text-4xl text-[#141311]">
-                  Insomnus
+                  EZ Эдийн засаг
                 </motion.h2>
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
@@ -87,12 +87,12 @@ export function FeaturedCase() {
                   className="mt-4 space-y-4 text-[#3c3933]"
                 >
                   <p>
-                    A dark pixel roguelike I lead as Creative Asset & Marketing Lead — brand, posters,
-                    in-game art, community, and growth. Legal partnership with Somnia. MegaETH grants.
-                    Gate Labs as technical advisor. 195,000+ registered users.
+                    A Mongolian-language newsroom on the economy and world markets, live at ediinzasag.mn.
+                    Brand, newsroom site, markets desk, and the editor app behind it — with a daily
+                    news agent that files leads for the desk.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Art direction", "Campaign design", "Pixel art", "Growth"].map((tag) => (
+                    {["Brand", "Product design", "Web build", "Editorial"].map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-[#d5ccbc] px-3 py-1 font-mono text-[10px] tracking-wider text-[#3c3933] uppercase"
@@ -102,7 +102,7 @@ export function FeaturedCase() {
                     ))}
                   </div>
                   <a
-                    href="/work/insomnus.html"
+                    href="/work/ediinzasag.html"
                     className="inline-flex rounded-full bg-[#141311] px-5 py-2.5 text-sm font-semibold text-[#f3eee4]"
                   >
                     Read the case

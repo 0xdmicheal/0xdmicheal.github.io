@@ -7,6 +7,7 @@ import {
 } from "motion/react";
 
 const SLIDES = [
+  { id: 9, img: "/img/ez/hero.jpg", title: "EZ Эдийн засаг", href: "/work/ediinzasag.html" },
   { id: 1, img: "/img/insomnus/hero.jpg", title: "Insomnus", href: "/work/insomnus.html" },
   { id: 2, img: "/img/gorillas/kit/mage.jpg", title: "Some Gorillas", href: "/work/somegorillas.html" },
   { id: 3, img: "/img/mintpark/kit/ice-mark.jpg", title: "Mintpark", href: "/work/mintpark.html" },

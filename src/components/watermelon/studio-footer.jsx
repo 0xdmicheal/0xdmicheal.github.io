@@ -5,6 +5,7 @@ const columns = [
   {
     title: "Work",
     links: [
+      { label: "EZ Эдийн засаг", href: "/work/ediinzasag.html" },
       { label: "Insomnus", href: "/work/insomnus.html" },
       { label: "Somnia", href: "/work/somnia.html" },
       { label: "MegaETH", href: "/work/megaeth.html" },

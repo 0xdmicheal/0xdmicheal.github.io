@@ -27,4 +27,4 @@ Static output lands in `dist/`. Deploy that folder to any static host (Netlify, 
 - `/work.html` — index
 - `/about.html` — story + experience
 - `/contact.html` — inquiry form (opens mail)
-- `/work/insomnus.html`, `/work/mintpark.html`, `/work/ordinals.html`, `/work/somegorillas.html`
+- `/work/ediinzasag.html`, `/work/insomnus.html`, `/work/mintpark.html`, `/work/ordinals.html`, `/work/somegorillas.html`

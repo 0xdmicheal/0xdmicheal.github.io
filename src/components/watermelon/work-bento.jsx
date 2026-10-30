@@ -2,6 +2,15 @@
 
 const PROJECTS = [
   {
+    id: "ediinzasag",
+    href: "/work/ediinzasag.html",
+    image: "/img/ez/hero.jpg",
+    alt: "EZ Эдийн засаг key art",
+    tag: "Brand · Product",
+    title: "EZ Эдийн засаг",
+    copy: "Mongolian newsroom on the economy and markets — designed and built end to end.",
+  },
+  {
     id: "insomnus",
     href: "/work/insomnus.html",
     image: "/img/insomnus/kit/creation.jpg",
@@ -111,7 +120,7 @@ function Card({ project }) {
 }
 
 export function WorkGallery({ home = false }) {
-  const items = home ? PROJECTS.filter((p) => p.id !== "insomnus").slice(0, 6) : PROJECTS;
+  const items = home ? PROJECTS.filter((p) => p.id !== "ediinzasag").slice(0, 6) : PROJECTS;
 
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
