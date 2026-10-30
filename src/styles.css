@@ -1195,6 +1195,10 @@ html.js-reveal .job.is-in::before {
   .fit {
     grid-template-columns: 1fr !important;
   }
+
+  .fit.fit--tiles {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
 
 .gallery figure {

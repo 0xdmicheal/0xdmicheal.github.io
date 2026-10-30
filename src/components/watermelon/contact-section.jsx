@@ -82,7 +82,7 @@ export function ContactSection() {
 
         <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div>
-            <ul className="space-y-5 text-[#3c3933]">
+            <ul className="space-y-5 text-[#3c3933]" style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}>
               <li>
                 <p className="font-mono text-[10px] tracking-[0.16em] text-[#1e4bff] uppercase">Where</p>
                 <p className="mt-1 text-lg font-medium text-[#141311]">Ulaanbaatar · remote-ready</p>
@@ -172,6 +172,7 @@ export function ContactSection() {
             <button
               type="submit"
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#1e4bff] text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.28)] outline-none sm:w-auto sm:px-8"
+              style={{ color: "#ffffff" }}
             >
               Send the brief
             </button>

@@ -79,7 +79,7 @@ export function MorphingButton({
             }
           }}
           transition={spring}
-          style={{ borderRadius: 9999 }}
+          style={{ borderRadius: 9999, color: "#ffffff" }}
           className={`relative flex items-center justify-center rounded-full bg-[#1e4bff] px-5 text-sm font-semibold whitespace-nowrap text-white outline-none ${
             isExpanded ? "h-9" : "h-11"
           }`}

@@ -52,6 +52,7 @@ export function PillNav() {
             <a
               href="/contact.html"
               className="hidden rounded-full bg-[#1e4bff] px-4 py-2 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.28)] outline-none focus-visible:shadow-[0_0_0_2px_#1e4bff] md:inline-flex"
+              style={{ color: "#ffffff" }}
             >
               Start a project
             </a>
@@ -79,6 +80,7 @@ export function PillNav() {
             <a
               href="/contact.html"
               className="mt-1 flex items-center justify-center rounded-full bg-[#1e4bff] px-4 py-2.5 text-sm font-semibold text-white"
+              style={{ color: "#ffffff" }}
             >
               Start a project
             </a>

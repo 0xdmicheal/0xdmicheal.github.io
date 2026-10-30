@@ -25,6 +25,7 @@ export default defineConfig({
         ediinzasag: resolve(root, "work/ediinzasag.html"),
         insomnus: resolve(root, "work/insomnus.html"),
         mintpark: resolve(root, "work/mintpark.html"),
+        nomin: resolve(root, "work/nomin.html"),
         ordinals: resolve(root, "work/ordinals.html"),
         somegorillas: resolve(root, "work/somegorillas.html"),
         somnia: resolve(root, "work/somnia.html"),

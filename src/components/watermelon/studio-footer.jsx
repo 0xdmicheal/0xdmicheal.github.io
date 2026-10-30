@@ -75,17 +75,17 @@ export function StudioFooter() {
           </motion.div>
           <nav
             aria-label="Footer"
-            className="grid w-full max-w-[540px] grid-cols-3 gap-x-3 gap-y-8"
+            className="grid w-full max-w-[540px] grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3"
           >
             {columns.map((col) => (
               <div key={col.title}>
-                <h3 className="text-[#e8e0cc]">{col.title}</h3>
-                <ul className="mt-3 flex flex-col gap-3">
+                <h3 className="m-0 font-mono text-[11px] font-normal tracking-[0.16em] text-[#7a7368] uppercase">{col.title}</h3>
+                <ul className="m-0 mt-4 flex list-none flex-col gap-3 p-0" style={{ listStyle: "none" }}>
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-sm"
+                        className="text-sm whitespace-nowrap"
                         style={{ color: "#e8e0cc" }}
                       >
                         {link.label}
@@ -98,11 +98,11 @@ export function StudioFooter() {
           </nav>
         </div>
       </motion.div>
-      <div className="relative overflow-hidden px-3 pt-8 pb-0 md:px-6 md:pt-14">
+      <div className="relative overflow-hidden px-3 pt-6 pb-0 md:px-6 md:pt-14">
         <p
           className="select-none text-center font-[Syne,system-ui,sans-serif] font-extrabold tracking-[-0.06em] text-[#e8e0cc]"
           style={{
-            fontSize: "clamp(2.6rem, 14vw, 11rem)",
+            fontSize: "clamp(2.4rem, 12.5vw, 11rem)",
             lineHeight: 0.78,
             transform: "translateY(18%)",
           }}
