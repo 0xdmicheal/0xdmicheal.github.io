@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { FaCircle } from "react-icons/fa";
 import { IoMail, IoPaperPlane, IoLogoTwitter, IoCall, IoLogoLinkedin } from "react-icons/io5";
-import { MdPerson, MdMailOutline } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa6";
 
 const CHANNELS = [
   {
@@ -47,21 +46,6 @@ const CHANNELS = [
 ];
 
 export function ContactSection() {
-  const [sent, setSent] = useState(false);
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const kind = String(data.get("kind") || "").trim();
-    const message = String(data.get("message") || "").trim();
-    const subject = encodeURIComponent(`${kind || "Project"} — ${name || "New inquiry"}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nNeed: ${kind}\n\n${message}`);
-    window.location.href = `mailto:decentralizedmicheal@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
-  };
-
   return (
     <section className="relative overflow-hidden px-[var(--space,1.5rem)] pt-6 pb-8">
       <div className="pointer-events-none absolute inset-0 z-0 [background-image:radial-gradient(circle_at_1px_1px,rgba(20,19,17,0.07)_1px,transparent_0)] [background-size:22px_22px] [mask-image:radial-gradient(circle_at_center,black_0%,transparent_72%)]" />
@@ -101,99 +85,31 @@ export function ContactSection() {
             </ul>
           </div>
 
-          <form
-            onSubmit={onSubmit}
-            className="rounded-[1.75rem] border border-[#d5ccbc] bg-[#fffaf2] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,1),0_16px_40px_rgba(0,0,0,0.06)] sm:p-8"
+          <ul
+            className="overflow-hidden rounded-[1.75rem] border border-[#d5ccbc] bg-[#fffaf2] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_16px_40px_rgba(0,0,0,0.06)]"
+            style={{ listStyle: "none", paddingLeft: 0, margin: 0 }}
           >
-            {sent && (
-              <p className="mb-4 rounded-xl bg-[#dbe3ff] px-4 py-3 text-sm text-[#1638c9]">
-                Your mail app should open with the brief filled in. If it doesn’t, email me directly.
-              </p>
-            )}
-            <label className="mb-4 block">
-              <span className="mb-1.5 block font-mono text-[10px] tracking-[0.16em] text-[#7a7368] uppercase">
-                Name
-              </span>
-              <span className="relative block">
-                <MdPerson className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-[#7a7368]" />
-                <input
-                  name="name"
-                  type="text"
-                  required
-                  autoComplete="name"
-                  placeholder="Your name"
-                  className="h-12 w-full rounded-xl border border-[#d5ccbc] bg-[#f3eee4] pr-4 pl-10 text-[#141311] outline-none focus:border-[#1e4bff] focus:shadow-[0_0_0_3px_rgba(30,75,255,0.15)]"
-                />
-              </span>
-            </label>
-            <label className="mb-4 block">
-              <span className="mb-1.5 block font-mono text-[10px] tracking-[0.16em] text-[#7a7368] uppercase">
-                Email
-              </span>
-              <span className="relative block">
-                <MdMailOutline className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-[#7a7368]" />
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  placeholder="you@studio.com"
-                  className="h-12 w-full rounded-xl border border-[#d5ccbc] bg-[#f3eee4] pr-4 pl-10 text-[#141311] outline-none focus:border-[#1e4bff] focus:shadow-[0_0_0_3px_rgba(30,75,255,0.15)]"
-                />
-              </span>
-            </label>
-            <label className="mb-4 block">
-              <span className="mb-1.5 block font-mono text-[10px] tracking-[0.16em] text-[#7a7368] uppercase">
-                What do you need
-              </span>
-              <select
-                name="kind"
-                className="h-12 w-full rounded-xl border border-[#d5ccbc] bg-[#f3eee4] px-4 text-[#141311] outline-none focus:border-[#1e4bff] focus:shadow-[0_0_0_3px_rgba(30,75,255,0.15)]"
-              >
-                <option>Graphic design / campaign</option>
-                <option>Art direction / brand</option>
-                <option>Marketing design / launch</option>
-                <option>Pixel art / game world</option>
-                <option>Something else</option>
-              </select>
-            </label>
-            <label className="mb-6 block">
-              <span className="mb-1.5 block font-mono text-[10px] tracking-[0.16em] text-[#7a7368] uppercase">
-                The brief
-              </span>
-              <textarea
-                name="message"
-                required
-                rows={6}
-                placeholder="What you’re building, when it ships, and what good looks like."
-                className="w-full resize-y rounded-xl border border-[#d5ccbc] bg-[#f3eee4] px-4 py-3 text-[#141311] outline-none focus:border-[#1e4bff] focus:shadow-[0_0_0_3px_rgba(30,75,255,0.15)]"
-              />
-            </label>
-            <button
-              type="submit"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#1e4bff] text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.28)] outline-none sm:w-auto sm:px-8"
-              style={{ color: "#ffffff" }}
-            >
-              Send the brief
-            </button>
-          </form>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {CHANNELS.map((ch) => (
-            <a
-              key={ch.id}
-              href={ch.href}
-              className="group flex flex-col rounded-[1.4rem] border border-[#d5ccbc] bg-[#fffaf2] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,1)] transition-transform hover:-translate-y-0.5"
-            >
-              <span className="mb-3 inline-flex size-10 items-center justify-center rounded-xl bg-[#f3eee4] text-[#141311]">
-                <ch.icon className="size-5" />
-              </span>
-              <span className="text-sm font-semibold text-[#141311]">{ch.title}</span>
-              <span className="mt-0.5 font-mono text-[11px] break-words text-[#3c3933]">{ch.handle}</span>
-              <span className="mt-2 text-xs text-[#7a7368]">{ch.note}</span>
-            </a>
-          ))}
+            {CHANNELS.map((ch, i) => (
+              <li key={ch.id} className={i ? "border-t border-[#e6dece]" : undefined}>
+                <a
+                  href={ch.href}
+                  target={ch.href.startsWith("http") ? "_blank" : undefined}
+                  rel={ch.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[#f3eee4] sm:px-6"
+                >
+                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#f3eee4] text-[#141311] group-hover:bg-[#e8e0d2]">
+                    <ch.icon className="size-5" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-[#141311]">{ch.title}</span>
+                    <span className="block font-mono text-[11px] break-words text-[#3c3933]">{ch.handle}</span>
+                    <span className="mt-0.5 block text-xs text-[#7a7368]">{ch.note}</span>
+                  </span>
+                  <FaArrowRight className="size-3.5 shrink-0 text-[#7a7368] transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -4,12 +4,14 @@ import { Menu, X } from "lucide-react";
 
 const LINKS = [
   { href: "/work.html", label: "Work", match: "/work" },
+  { href: "/writing.html", label: "Writing", match: "/writing" },
   { href: "/about.html", label: "About", match: "/about" },
   { href: "/contact.html", label: "Contact", match: "/contact" },
 ];
 
 function isActive(match) {
   const path = window.location.pathname;
+  if (match === "/writing" && path.startsWith("/article")) return true;
   return path === match || path.startsWith(`${match}.html`) || path.startsWith(`${match}/`);
 }
 

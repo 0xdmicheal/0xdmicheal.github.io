@@ -16,7 +16,9 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@lucasmarkes/motes-react": "^0.3.0",
     "lucide-react": "^1.47.0",
+    "marked": "^15.0.12",
     "motion": "^13.4.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",

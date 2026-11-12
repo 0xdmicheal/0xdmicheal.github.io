@@ -73,6 +73,15 @@ const PROJECTS = [
     title: "Nomin Shaglaa",
     copy: "Mark, product retouching, and a poster catalogue for handmade shagai gear.",
   },
+  {
+    id: "shosha",
+    href: "/work/shosha.html",
+    image: "/img/shosha/card.jpg",
+    alt: "Shosha stacked wordmark",
+    tag: "Brand book",
+    title: "Shosha",
+    copy: "Brand guidelines: stacked wordmark, one signal yellow, type and voice.",
+  },
 ];
 
 function Card({ project }) {

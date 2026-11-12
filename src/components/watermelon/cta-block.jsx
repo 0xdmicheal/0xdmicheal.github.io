@@ -11,7 +11,6 @@ const AVATARS = [
 export function CtaBlock() {
   return (
     <section className="relative flex w-full items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 [background-image:radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.12)_1px,transparent_0)] [background-size:20px_20px] [mask-image:linear-gradient(to_bottom,black_60%,transparent)]" />
       <div className="relative z-10 w-full max-w-3xl px-6 py-16 text-center sm:px-16 sm:py-20">
         <div className="mb-7 flex justify-center">
           <span className="flex items-center gap-1.5 rounded-full bg-[#e8e0d2] px-3 py-1 text-[10px] font-medium tracking-widest text-[#3c3933] uppercase">

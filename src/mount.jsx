@@ -10,6 +10,8 @@ import { StudioFooter } from "./components/watermelon/studio-footer.jsx";
 import { ContactSection } from "./components/watermelon/contact-section.jsx";
 import { StudioHero } from "./components/watermelon/studio-hero.jsx";
 import { FeaturedCase } from "./components/watermelon/featured-case.jsx";
+import { WritingList } from "./components/watermelon/writing-list.jsx";
+import { ArticleView } from "./components/watermelon/article-view.jsx";
 import "./tailwind.css";
 
 function mount(id, node) {
@@ -37,3 +39,6 @@ mount("wm-features", <FeatureGrid />);
 mount("wm-cta", <CtaBlock />);
 mount("wm-footer", <StudioFooter />);
 mount("wm-contact", <ContactSection />);
+mount("wm-writing", <WritingList />);
+mount("wm-article", <ArticleView />);
+

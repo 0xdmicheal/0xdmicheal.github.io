@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { MotesField } from "./motes-field.jsx";
 import { FaArrowRight } from "react-icons/fa6";
 
 const columns = [
@@ -16,6 +17,7 @@ const columns = [
     title: "Studio",
     links: [
       { label: "About", href: "/about.html" },
+      { label: "Writing", href: "/writing.html" },
       { label: "Contact", href: "/contact.html" },
       { label: "Start a project", href: "/contact.html" },
     ],
@@ -48,7 +50,10 @@ const rise = {
 export function StudioFooter() {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full overflow-hidden rounded-t-[2.5rem] bg-[#0e0d0b] md:rounded-t-[3rem]">
+    <footer className="relative isolate w-full overflow-hidden rounded-t-[2.5rem] bg-[#0e0d0b] md:rounded-t-[3rem]">
+      <div className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_35%,black)]">
+        <MotesField tone="dark" />
+      </div>
       <motion.div
         variants={stagger}
         initial={false}
