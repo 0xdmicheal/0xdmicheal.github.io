@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Titr Pitch Deck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;0,900;1,800&family=Inter:wght@400;600;700&display=block" rel="stylesheet">
+<style>
+  @page { size: 1440px 810px; margin: 0; }
+  :root { --red: #fa1405; --up: #2bd576; --down: #ff4d3d; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #000; }
+  body { font-family: 'Inter', sans-serif; color: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { position: relative; width: 1440px; height: 810px; overflow: hidden; background: #000; break-after: page; }
+  .slide:last-child { break-after: auto; }
+  .abs { position: absolute; }
+  .bg { position: absolute; display: block; }
+  /* The template's header on every slide */
+  .brand { position: absolute; left: 82px; top: 82px; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 9px; }
+  .brand i { width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+  .date { position: absolute; right: 82px; top: 82px; font-size: 22px; }
+  /* Heavy italic headings, as in the template */
+  .it { font-family: 'Inter Tight', sans-serif; font-style: italic; font-weight: 800; letter-spacing: -0.065em; word-spacing: .12em; line-height: .9; }
+  .heavy { font-family: 'Inter Tight', sans-serif; font-weight: 900; letter-spacing: -0.05em; word-spacing: .1em; line-height: .86; }
+  .sub-it { font-family: 'Inter Tight', sans-serif; font-style: italic; font-weight: 800; letter-spacing: -0.05em; font-size: 34px; }
+  p { font-size: 17px; line-height: 1.32; }
+  .panel { position: absolute; overflow: hidden; }
+  .panel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .panel.contain img { object-fit: contain; }
+  .outline { border: 1.5px solid rgb(255 255 255 / .75); border-radius: 26px; }
+  .pill { position: absolute; display: flex; align-items: center; gap: 12px; height: 86px; padding: 0 30px; border-radius: 43px; border: 1.5px solid rgb(255 255 255 / .85); font-size: 19px; }
+  .pill b { font-family: 'Inter Tight', sans-serif; font-weight: 900; font-size: 44px; letter-spacing: -0.03em; }
+  .pill.red { background: var(--red); border-color: var(--red); }
+
+  /* Live market data */
+  .ticker { position: absolute; left: 0; right: 0; height: 64px; display: flex; align-items: center; overflow: hidden; background: rgb(0 0 0 / .55); border-block: 1px solid rgb(255 255 255 / .14); font-variant-numeric: tabular-nums; }
+  .ticker .tag { flex: none; height: 100%; display: grid; place-items: center; padding: 0 22px; background: var(--red); font-weight: 700; font-size: 16px; letter-spacing: .08em; }
+  .tape { display: flex; gap: 40px; padding-left: 28px; white-space: nowrap; font-size: 19px; }
+  .tape span { display: inline-flex; align-items: baseline; gap: 10px; }
+  .tape em { font-style: normal; color: rgb(255 255 255 / .62); font-size: 15px; }
+  .tape .v { font-weight: 700; transition: color .4s; }
+  .chg { font-size: 15px; font-weight: 600; }
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: rgb(255 255 255 / .6); }
+  .flash-up { color: var(--up) !important; } .flash-down { color: var(--down) !important; }
+  .chart-card { position: absolute; border: 1.5px solid rgb(255 255 255 / .75); border-radius: 26px; background: rgb(0 0 0 / .35); }
+  .rows { font-variant-numeric: tabular-nums; }
+  .rows div { display: grid; grid-template-columns: 1fr auto 86px; gap: 16px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid rgb(255 255 255 / .12); font-size: 18px; }
+  .rows div:last-child { border-bottom: 0; }
+  .rows b { font-weight: 700; text-align: right; transition: color .4s; }
+  .rows .chg { text-align: right; }
+  .live-dot { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: .08em; }
+  .live-dot::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--red); animation: blink 1.4s infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .static .live-dot::before { animation: none; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="slide">
+  <img class="bg" src="assets/t01_0.jpeg" alt="" style="left:0;top:-150px;width:1440px;height:960px;transform:scale(-1,-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="heavy abs" style="left:88px;top:180px;font-size:330px">Titr.</div>
+  <div class="abs" style="left:82px;top:540px;font-family:'Inter Tight';font-weight:700;font-size:44px;letter-spacing:-0.02em">The Broadcast System for Local TV</div>
+  <p class="abs" style="left:82px;top:612px;width:560px">Newsroom, on-air graphics, live market data and playout behind one login, running a whole station from one PC.</p>
+  <div class="abs" style="right:82px;top:668px;text-align:right;font-size:22px;line-height:1.3">Presented by :<br><b>Micheal</b></div>
+</section>
+
+<!-- 2 · Contents -->
+<section class="slide">
+  <img class="bg" src="assets/t02_0.jpeg" alt="" style="left:0;top:-707px;width:2600px;height:3902px">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="pill red" style="left:82px;top:222px;width:342px"><b>01.</b>The Problem</div>
+  <div class="pill" style="left:440px;top:222px;width:280px"><b>02.</b>Our Solution</div>
+  <div class="pill" style="left:82px;top:332px;width:280px"><b>03.</b>Who It's For</div>
+  <div class="pill" style="left:378px;top:332px;width:342px"><b>04.</b>Why Titr?</div>
+  <div class="pill" style="left:82px;top:442px;width:290px"><b>05.</b>Who Uses It</div>
+  <div class="pill red" style="left:388px;top:442px;width:332px"><b>06.</b>Inside the Rooms</div>
+  <div class="pill red" style="left:82px;top:552px;width:372px"><b>07.</b>Live Market Data</div>
+  <div class="pill" style="left:470px;top:552px;width:250px;white-space:nowrap"><b>08.</b>What's Next</div>
+  <div class="it abs" style="left:772px;top:205px;font-size:150px">List of<br>Contents</div>
+  <p class="abs" style="left:780px;top:490px;width:470px">What Titr does today, who it is for, the live market data now coming to air, and what happens before the first station goes live.</p>
+</section>
+
+<!-- 3 · The problem -->
+<section class="slide">
+  <img class="bg" src="assets/t03_2.jpeg" alt="" style="left:0;top:-75px;width:1440px;height:960px;transform:scaleX(-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="it abs" style="left:96px;top:130px;font-size:138px">The<br>Problem</div>
+  <p class="abs" style="left:98px;top:420px;width:450px">Local stations run news, graphics and playout on separate tools that never share data, so every headline is typed more than once.</p>
+  <div class="sub-it abs" style="left:756px;top:178px">In the Newsroom</div>
+  <p class="abs" style="left:756px;top:240px;width:470px">Headlines are retyped from the newsroom into graphics and again into playout. Rates and weather are typed by hand, and go stale.</p>
+  <div class="sub-it abs" style="left:756px;top:338px">In the Control Room</div>
+  <p class="abs" style="left:756px;top:400px;width:470px">No preview, no approval and no record of who put what on screen, while each tool brings its own licence and login.</p>
+  <div class="panel" style="left:0;top:547px;width:787px;height:263px"><img src="assets/crops/gfx-form.jpg" alt=""></div>
+  <div class="panel" style="left:810px;top:547px;width:630px;height:263px"><img src="assets/crops/live.jpg" alt=""></div>
+</section>
+
+<!-- 4 · Our solution -->
+<section class="slide">
+  <img class="bg" src="assets/t03_2.jpeg" alt="" style="left:0;top:-75px;width:1440px;height:960px">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="it abs" style="left:92px;top:148px;font-size:118px">Our<br>Solution</div>
+  <div class="panel" style="left:641px;top:118px;width:719px;height:230px;border-radius:0 0 0 0"><img src="assets/crops/lib-row.jpg" alt=""></div>
+  <div class="outline abs" style="left:90px;top:370px;width:405px;height:397px;padding:40px 30px">
+    <div class="sub-it">Newsroom</div>
+    <p style="position:absolute;left:30px;right:30px;bottom:40px">Journalists write headline packs. The director approves them and runs the newsroom strip, live on air.</p>
+  </div>
+  <div class="outline abs" style="left:517px;top:488px;width:405px;height:279px;padding:40px 30px">
+    <div class="sub-it">Graphics</div>
+    <p style="position:absolute;left:30px;right:30px;bottom:40px">Cue a graphic, check it on preview, take it to program. Templates are built without code.</p>
+  </div>
+  <div class="abs" style="left:953px;top:488px;width:405px;height:279px;padding:40px 30px;border-radius:26px;background:var(--red)">
+    <div class="sub-it">Playout</div>
+    <p style="position:absolute;left:30px;right:30px;bottom:40px">The CasparCG engine keys it all over video and sends one program to NDI, SDI, OBS or vMix.</p>
+  </div>
+</section>
+
+<!-- 5 · Who it's for -->
+<section class="slide">
+  <img class="bg" src="assets/t04_1.jpeg" alt="" style="left:0;top:-158px;width:1440px;height:2160px;transform:scaleY(-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="it abs" style="left:118px;top:140px;font-size:132px">Who It's<br>For</div>
+  <div class="heavy abs" style="left:146px;top:458px;font-size:118px;letter-spacing:-0.03em">21</div>
+  <p class="abs" style="left:134px;top:598px;width:470px">Aimag centres across Mongolia, plus the capital: each with local news, local prices and weather to put on screen.</p>
+  <div class="heavy abs" style="left:866px;top:142px;font-size:118px;letter-spacing:-0.03em">1 PC</div>
+  <p class="abs" style="left:854px;top:280px;width:440px">Runs a whole station: newsroom, graphics and playout, with no server room, no cloud contract and no licence server.</p>
+  <div class="panel contain" style="left:726px;top:405px;width:631px;height:325px;background:#0b0b0c"><img src="assets/fig/map.png" alt="" style="padding:18px"></div>
+</section>
+
+<!-- 6 · Why Titr -->
+<section class="slide">
+  <svg class="abs" width="1440" height="810" style="left:0;top:0">
+    <defs><linearGradient id="band" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a00a07"/><stop offset=".55" stop-color="#8a0806"/><stop offset="1" stop-color="#1a0201"/></linearGradient></defs>
+    <polygon points="446,93 945,93 1440,590 1440,810 660,810 446,596" fill="url(#band)"/>
+  </svg>
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="sub-it abs" style="left:140px;top:198px;font-size:32px">Runs Offline</div>
+  <p class="abs" style="left:140px;top:262px;width:450px">Fonts, templates and data live on the station PC. Losing the internet doesn't take you off air.</p>
+  <div class="sub-it abs" style="left:764px;top:198px;font-size:32px">Safe on Air</div>
+  <p class="abs" style="left:764px;top:262px;width:450px">Edits on air wait for TAKE, Clear air asks twice, five roles see only their rooms, and every take is logged.</p>
+  <div class="it abs" style="left:88px;top:462px;font-size:122px">Why<br>Titr?</div>
+  <div class="panel" style="left:708px;top:438px;width:305px;height:270px;border-radius:24px"><img src="assets/fig/take.png" alt="" style="object-position:72% 40%"></div>
+  <div class="panel" style="left:1032px;top:438px;width:305px;height:270px;border-radius:24px"><img src="assets/fig/flow.png" alt="" style="object-position:30% 50%"></div>
+</section>
+
+<!-- 7 · Who uses it -->
+<section class="slide">
+  <img class="bg" src="assets/t07_0.jpeg" alt="" style="left:0;top:-1005px;width:1440px;height:2160px;transform:scale(-1,-1)">
+  <div class="brand"><i></i>Titr</div>
+  <div class="it abs" style="left:82px;top:230px;font-size:128px">Who<br>Uses It</div>
+  <p class="abs" style="left:78px;top:655px;width:520px">Five roles share one system. Each person signs in and sees only the rooms their job needs.</p>
+  <div class="abs" style="left:492px;top:65px;width:282px;height:555px;border-radius:14px;background:var(--red);border:2px solid #2a0000"></div>
+  <div class="panel" style="left:507px;top:80px;width:252px;height:420px;border-radius:10px"><img src="assets/crops/op-col.jpg" alt=""></div>
+  <div class="panel" style="left:816px;top:80px;width:240px;height:420px;border-radius:10px"><img src="assets/crops/dir-col.jpg" alt=""></div>
+  <div class="panel" style="left:1112px;top:80px;width:245px;height:420px;border-radius:10px"><img src="assets/crops/prep-col.jpg" alt=""></div>
+  <div class="abs" style="left:526px;top:530px"><div style="font-weight:700;font-size:24px">Operator</div><div style="font-size:18px;margin-top:10px">Graphics Control</div></div>
+  <div class="abs" style="left:824px;top:530px"><div style="font-weight:700;font-size:24px">Director</div><div style="font-size:18px;margin-top:10px">Director Desk</div></div>
+  <div class="abs" style="left:1129px;top:530px"><div style="font-weight:700;font-size:24px">Producer</div><div style="font-size:18px;margin-top:10px">Prepare &amp; Designer</div></div>
+</section>
+
+<!-- 8 · Inside the rooms -->
+<section class="slide">
+  <img class="bg" src="assets/t04_1.jpeg" alt="" style="left:0;top:-98px;width:1440px;height:2160px;transform:scaleY(-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="panel" style="left:82px;top:114px;width:250px;height:580px;border-radius:12px"><img src="assets/crops/lib-col.jpg" alt=""></div>
+  <div class="panel" style="left:368px;top:114px;width:352px;height:338px;border-radius:12px"><img src="assets/crops/layouts.jpg" alt=""></div>
+  <div class="panel" style="left:368px;top:483px;width:352px;height:211px;border-radius:12px"><img src="assets/crops/program.jpg" alt=""></div>
+  <div class="it abs" style="left:774px;top:165px;font-size:150px">Inside the<br>Rooms</div>
+  <div class="abs" style="left:802px;top:480px;font-size:28px">Eight Rooms, One Login</div>
+  <p class="abs" style="left:802px;top:528px;width:500px">Graphics control, playout, designer, shows, prepare, director, journalist and producer desks, all in one browser design. Shown: the template library, strip layouts and the director's program.</p>
+</section>
+
+<!-- 9 · Live market data -->
+<section class="slide" id="live">
+  <img class="bg" src="assets/t09_0.jpeg" alt="" style="left:-874px;top:-656px;width:2329px;height:3495px;transform:scaleX(-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="it abs" style="left:84px;top:170px;font-size:132px">Live<br>Market Data</div>
+  <p class="abs" style="left:98px;top:430px;width:500px">Exchange rates, gold, copper and markets feed straight into the ticker and statistic cards. When a price moves, the number on air moves with it: up in green, down in red, with no one retyping it.</p>
+  <p class="abs" style="left:98px;top:556px;width:500px;font-size:14px;color:rgb(255 255 255 / .62)">Values from the app's feed on 13/11/2026; movement in the web version is a preview. Official Монголбанк rates are being connected; until then rates are marked ЖИШЭЭ on air.</p>
+  <div class="chart-card" style="left:788px;top:143px;width:570px;height:520px;padding:30px 34px">
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="live-dot">LIVE</span><span style="font-size:15px;color:rgb(255 255 255 / .62)">USD/MNT</span></div>
+    <div style="display:flex;align-items:baseline;gap:14px;margin-top:10px"><b id="hero-v" style="font-family:'Inter Tight';font-weight:900;font-size:68px;letter-spacing:-0.03em;transition:color .4s">3,607</b><span id="hero-c" class="chg flat" style="font-size:20px">0.00%</span></div>
+    <svg id="spark" width="500" height="118" viewBox="0 0 500 118" style="display:block;margin-top:6px"><path id="spark-fill" fill="rgb(250 20 5 / .16)"/><path id="spark-line" fill="none" stroke="#fa1405" stroke-width="2.5" stroke-linejoin="round"/></svg>
+    <div class="rows" id="rows" style="margin-top:12px"></div>
+  </div>
+  <div class="ticker" style="top:716px"><div class="tag">ЖИШЭЭ</div><div class="tape" id="tape"></div></div>
+</section>
+
+<!-- 10 · What's next -->
+<section class="slide">
+  <img class="bg" src="assets/t10_0.jpeg" alt="" style="left:0;top:-75px;width:1440px;height:960px">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="it abs" style="left:92px;top:168px;font-size:132px">What's<br>Next?</div>
+  <p class="abs" style="left:104px;top:430px;width:480px">Titr runs end to end on one PC, and its NDI output is proven with a real receiver: 1080p at 59.94 fps with no dropped frames in the test.</p>
+  <div class="abs" style="left:723px;top:177px;width:591px;height:523px;border:1.5px solid rgb(255 255 255 / .75);border-radius:26px;overflow:hidden">
+    <div class="panel" style="left:0;top:0;width:591px;height:330px"><img src="assets/fig/playout.png" alt=""></div>
+    <div style="position:absolute;left:40px;right:40px;top:356px;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;font-size:17px">
+      <span>· SDI and the real switcher</span><span>· 72-hour soak test</span>
+      <span>· Official Монголбанк rates</span><span>· Mongolian interface</span>
+      <span>· Start on boot at the station</span><span>· Then: real air</span>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · Thank you -->
+<section class="slide">
+  <img class="bg" src="assets/t01_0.jpeg" alt="" style="left:0;top:-150px;width:1440px;height:960px;transform:scale(-1,-1)">
+  <div class="brand"><i></i>Titr</div><div class="date">13/11/2026</div>
+  <div class="heavy abs" style="left:82px;top:180px;font-size:221px">Thank<br><span style="margin-left:280px">You.</span></div>
+  <div class="abs" style="left:82px;top:612px;font-family:'Inter Tight';font-weight:700;font-size:40px;letter-spacing:-0.02em">michealbuilds.site/titr</div>
+  <p class="abs" style="left:82px;top:672px;width:560px">Live demo: michealbuilds.site/titrapp</p>
+  <div class="abs" style="right:82px;top:668px;text-align:right;font-size:22px;line-height:1.3">Presented by :<br><b>Micheal</b></div>
+</section>
+
+<script src="feed.js"></script>
+<script>
+// Live market data: starts from the app's real feed values; in the browser each price
+// takes small steps so the slide shows how the on-air numbers follow the market.
+(() => {
+  const isStatic = new URLSearchParams(location.search).has('static');
+  if (isStatic) document.body.classList.add('static');
+  let seed = 7;
+  const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const decimals = (s) => (s.split('.')[1] || '').length;
+  const items = FEED.map((f) => {
+    const base = parseFloat(f.value.replace(/,/g, ''));
+    const d = decimals(f.value);
+    return { name: f.pair, base, value: base, open: base / (1 + f.chg / 100), d, last: 0 };
+  });
+  const fmt = (v, d) => v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const pct = (it) => ((it.value / it.open - 1) * 100);
+  const cls = (p) => (p > 0.005 ? 'up' : p < -0.005 ? 'down' : 'flat');
+  const arrow = (p) => (p > 0.005 ? '▲' : p < -0.005 ? '▼' : '•');
+
+  // USD/MNT history for the chart: a gentle path ending at today's value.
+  const usd = items[0];
+  const hist = []; let h = usd.base * 0.9985;
+  for (let i = 0; i < 60; i++) { h += (usd.base - h) * 0.06 + (rand() - 0.5) * usd.base * 0.0009; hist.push(h); }
+  hist[hist.length - 1] = usd.value;
+
+  const tape = document.getElementById('tape');
+  const rows = document.getElementById('rows');
+  const shown = ['EUR/MNT', 'CNY/MNT', 'Алт', 'Зэс', 'Bitcoin USD'];
+  tape.innerHTML = items.map((it, i) => `<span><em>${it.name}</em><b class="v" data-i="${i}"></b><span class="chg" data-c="${i}"></span></span>`).join('');
+  rows.innerHTML = items.filter((it) => shown.includes(it.name)).map((it) => { const i = items.indexOf(it); return `<div><span>${it.name}</span><b data-i="${i}"></b><span class="chg" data-c="${i}"></span></div>`; }).join('');
+
+  function draw() {
+    for (const el of document.querySelectorAll('[data-i]')) { const it = items[el.dataset.i]; el.textContent = fmt(it.value, it.d); }
+    for (const el of document.querySelectorAll('[data-c]')) { const p = pct(items[el.dataset.c]); el.className = 'chg ' + cls(p); el.textContent = `${arrow(p)} ${Math.abs(p).toFixed(2)}%`; }
+    const hv = document.getElementById('hero-v'); hv.textContent = fmt(usd.value, 0);
+    const hp = pct(usd); const hc = document.getElementById('hero-c'); hc.className = 'chg ' + cls(hp); hc.textContent = `${arrow(hp)} ${Math.abs(hp).toFixed(2)}%`;
+    const min = Math.min(...hist), max = Math.max(...hist), span = max - min || 1;
+    const pts = hist.map((v, i) => [i * (500 / (hist.length - 1)), 108 - ((v - min) / span) * 96]);
+    const line = pts.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(' ');
+    document.getElementById('spark-line').setAttribute('d', line);
+    document.getElementById('spark-fill').setAttribute('d', `${line} L500 118 L0 118 Z`);
+  }
+  draw();
+  if (isStatic) return;
+
+  // Browser only: prices tick, and each change flashes green or red.
+  setInterval(() => {
+    const it = items[Math.floor(Math.random() * items.length)];
+    const step = (Math.random() - 0.5) * it.base * 0.0024;
+    it.value = Math.max(it.base * 0.97, Math.min(it.base * 1.03, it.value + step));
+    if (it === usd) { hist.push(usd.value); hist.shift(); }
+    draw();
+    const i = items.indexOf(it);
+    for (const el of document.querySelectorAll(`[data-i="${i}"]`)) { el.classList.remove('flash-up', 'flash-down'); void el.offsetWidth; el.classList.add(step >= 0 ? 'flash-up' : 'flash-down'); setTimeout(() => el.classList.remove('flash-up', 'flash-down'), 700); }
+    if (it === usd) { const hv = document.getElementById('hero-v'); hv.style.color = step >= 0 ? 'var(--up)' : 'var(--down)'; setTimeout(() => { hv.style.color = ''; }, 700); }
+  }, 450);
+  // Ticker crawls.
+  let x = 0; const tapeW = () => tape.scrollWidth;
+  (function crawl() { x -= 0.6; if (-x > tapeW() / 2) x = 0; tape.style.transform = `translateX(${x}px)`; requestAnimationFrame(crawl); })();
+  tape.innerHTML += tape.innerHTML;
+})();
+</script>
+<style>
+  @media screen { html { overflow-x: hidden; } body { background: #111; } .slide { margin: 0 auto 24px; } }
+</style>
+<script>
+  // Web view: slides fit the window width.
+  const fit = () => { document.body.style.zoom = Math.min(1, document.documentElement.clientWidth / 1440); };
+  fit(); addEventListener('resize', fit);
+</script>
+</body>
+</html>
