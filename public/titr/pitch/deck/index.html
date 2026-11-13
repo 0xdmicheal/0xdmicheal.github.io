@@ -52,9 +52,7 @@
   .rows b { font-weight: 700; text-align: right; transition: color .4s; }
   .rows .chg { text-align: right; }
   .live-dot { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: .08em; }
-  .live-dot::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--red); animation: blink 1.4s infinite; }
-  @keyframes blink { 50% { opacity: .25; } }
-  .static .live-dot::before { animation: none; }
+  .live-dot::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--red); }
 </style>
 </head>
 <body>
@@ -182,7 +180,7 @@
   <p class="abs" style="left:98px;top:430px;width:500px">Exchange rates, gold, copper and markets feed straight into the ticker and statistic cards. When a price moves, the number on air moves with it: up in green, down in red, with no one retyping it.</p>
   <p class="abs" style="left:98px;top:556px;width:500px;font-size:14px;color:rgb(255 255 255 / .62)">Values from the app's feed on 13/11/2026; movement in the web version is a preview. Official Монголбанк rates are being connected; until then rates are marked ЖИШЭЭ on air.</p>
   <div class="chart-card" style="left:788px;top:143px;width:570px;height:520px;padding:30px 34px">
-    <div style="display:flex;justify-content:space-between;align-items:center"><span class="live-dot">LIVE</span><span style="font-size:15px;color:rgb(255 255 255 / .62)">USD/MNT</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="live-dot">LIVE FEED · PREVIEW</span><span style="font-size:15px;color:rgb(255 255 255 / .62)">USD/MNT</span></div>
     <div style="display:flex;align-items:baseline;gap:14px;margin-top:10px"><b id="hero-v" style="font-family:'Inter Tight';font-weight:900;font-size:68px;letter-spacing:-0.03em;transition:color .4s">3,607</b><span id="hero-c" class="chg flat" style="font-size:20px">0.00%</span></div>
     <svg id="spark" width="500" height="118" viewBox="0 0 500 118" style="display:block;margin-top:6px"><path id="spark-fill" fill="rgb(250 20 5 / .16)"/><path id="spark-line" fill="none" stroke="#fa1405" stroke-width="2.5" stroke-linejoin="round"/></svg>
     <div class="rows" id="rows" style="margin-top:12px"></div>
