@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titr: the broadcast system for local TV</title>
+  <meta name="description" content="Newsroom, on-air graphics and playout behind one login. Titr runs a local TV station from one PC.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23ff4d3d'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/titr/assets/index-BlgsMzYC.js"></script>
+  <link rel="stylesheet" crossorigin href="/titr/assets/index-BhImfaEX.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-row">
+      <a class="logo" href="#top" aria-label="Titr home"><span class="tally" aria-hidden="true"></span>Titr</a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#product">Product</a>
+        <a href="#platform">Platform</a>
+        <a href="#local">Local</a>
+        <a href="#safety">Safety</a>
+        <a href="#run">Docs</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#run">Run Titr</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap center">
+        <h1>The broadcast system <br>for <span class="hl">local TV</span></h1>
+        <p class="lede">Newsroom, on-air graphics and playout behind one login,<br class="br-wide"> running a whole station from one PC.</p>
+        <div class="ctas ctas-center">
+          <a class="btn btn-primary" href="#run">Get started</a>
+          <a class="btn btn-ghost" href="#product">See the rooms</a>
+        </div>
+      </div>
+      <div class="hero-fig" id="hero-fig">
+        <div class="stack" aria-hidden="true">
+          <div class="plane p-video" style="--i: 0">
+            <span class="cam mono">CAM 1 · LIVE</span>
+            <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+          </div>
+          <div class="plane p-gfx" style="--i: 1">
+            <div class="h-bug"><b>EXAMPLE TV</b><span class="mono">20:00</span></div>
+            <div class="h-lt">
+              <span class="h-tag">BREAKING</span>
+              <span class="h-head">Air quality warning for Ulaanbaatar</span>
+              <span class="h-sub">Residents advised to stay indoors tonight</span>
+            </div>
+            <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+          </div>
+          <div class="plane p-strip" style="--i: 2">
+            <div class="h-ticker"><b>NEWS</b><span>USD/MNT 3,452</span><span>Ulaanbaatar −12°</span><span>Session resumes at 10:00</span></div>
+            <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+          </div>
+        </div>
+        <div class="layer-labels" aria-label="Program layers">
+          <button type="button" class="layer-label" aria-pressed="false"><span class="mono">30</span> Newsroom strip</button>
+          <button type="button" class="layer-label" aria-pressed="false"><span class="mono">20</span> Graphics</button>
+          <button type="button" class="layer-label" aria-pressed="false"><span class="mono">10</span> Video</button>
+        </div>
+      </div>
+      <div class="wrap works">
+        <span class="dim">Works with</span>
+        <ul class="works-list"><li>CasparCG</li><li>NDI</li><li>DeckLink SDI</li><li>OBS</li><li>vMix</li><li>Stream Deck</li></ul>
+      </div>
+    </section>
+
+    <!-- Rooms -->
+    <section class="section" id="product">
+      <div class="wrap">
+        <p class="eyebrow">Product</p>
+        <h2>Every room a station needs</h2>
+
+        <div class="rooms">
+          <div class="room-tabs" role="tablist" aria-label="Rooms" aria-orientation="vertical">
+            <button role="tab" id="tab-graphics" aria-controls="panel-graphics" aria-selected="true">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 3 6.5 10 10l7-3.5L10 3Zm-7 7 7 3.5 7-3.5M3 13.5 10 17l7-3.5"/></svg>Graphics</button>
+            <button role="tab" id="tab-newsroom" aria-controls="panel-newsroom" aria-selected="false" tabindex="-1">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3h10v14H5zM8 7h4M8 10h4M8 13h2"/></svg>Newsroom</button>
+            <button role="tab" id="tab-designer" aria-controls="panel-designer" aria-selected="false" tabindex="-1">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m13 3 4 4-9 9H4v-4l9-9Z"/></svg>Designer</button>
+            <button role="tab" id="tab-playout" aria-controls="panel-playout" aria-selected="false" tabindex="-1">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m8.5 7 4 3-4 3V7Z"/></svg>Playout</button>
+          </div>
+
+          <!-- Graphics -->
+          <div class="room" role="tabpanel" id="panel-graphics" aria-labelledby="tab-graphics">
+            <div class="room-copy">
+              <h3>Preview, then take</h3>
+              <p class="sub">Operators cue a graphic, check it on preview, and take it to program on cue.</p>
+              <ul class="feats">
+                <li><h4>States, not just on and off</h4><p>Full, headline and compact versions of one graphic, switched without a cut.</p></li>
+                <li><h4>Update live</h4><p>Edits to something on air wait until you send them.</p></li>
+                <li><h4>Ready-made templates</h4><p>Lower third, name super, ticker, scorebug, countdown, statistic card, station bug, title card.</p></li>
+              </ul>
+            </div>
+            <div class="fig fig-take">
+              <figure class="mon dark">
+                <figcaption><span class="tag tag-pvw">PVW</span></figcaption>
+                <canvas id="pvw" aria-label="Preview monitor with a lower third"></canvas>
+              </figure>
+              <div class="take-ctl">
+                <button class="pill pill-take" id="take" type="button">TAKE</button>
+                <button class="pill" id="clear" type="button" disabled>CLEAR</button>
+              </div>
+              <figure class="mon dark" id="pgm-frame">
+                <figcaption><span class="tag tag-pgm">PGM</span><span class="onair-dot">ON AIR</span></figcaption>
+                <canvas id="pgm" aria-label="Program monitor"></canvas>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Newsroom -->
+          <div class="room" role="tabpanel" id="panel-newsroom" aria-labelledby="tab-newsroom" hidden>
+            <div class="room-copy">
+              <h3>From the journalist's desk to the strip</h3>
+              <p class="sub">Journalists write headline packs. The director approves them and runs the newsroom strip.</p>
+              <ul class="feats">
+                <li><h4>A desk for each role</h4><p>Journalist, producer and director desks, each with only what that person needs.</p></li>
+                <li><h4>Approvals</h4><p>Nothing a journalist writes reaches the screen before a director approves it.</p></li>
+                <li><h4>Live data</h4><p>Exchange rates, weather and a ticker feed, without touching a template.</p></li>
+              </ul>
+            </div>
+            <div class="fig fig-flow" id="flow-fig">
+              <div class="node node-a"><p class="node-t mono">JOURNALISTS</p><div class="cells cells-dia" data-cells="9"></div></div>
+              <div class="node node-b"><p class="node-t mono">DIRECTOR</p><div class="cells cells-hex" data-cells="12"></div></div>
+              <div class="node node-c"><p class="node-t mono">ON AIR · STRIP</p><div class="cells cells-sq" data-cells="16"></div></div>
+              <svg class="wires" aria-hidden="true"></svg>
+              <div class="flow-ctl">
+                <button class="pill" type="button" data-act="approve">Approve pack</button>
+                <button class="pill pill-take" type="button" data-act="send">Send to strip</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Designer -->
+          <div class="room" role="tabpanel" id="panel-designer" aria-labelledby="tab-designer" hidden>
+            <div class="room-copy">
+              <h3>Build graphics without code</h3>
+              <p class="sub">Producers draw a graphic and choose which words the journalist types. The control room gets the form for it.</p>
+              <ul class="feats">
+                <li><h4>Text, shapes and charts</h4><p>On a true 1080p canvas with title-safe guides.</p></li>
+                <li><h4>Brand built in</h4><p>Each show keeps its own colours, fonts and logo.</p></li>
+                <li><h4>Animation states</h4><p>See how it plays in, changes and leaves before it airs.</p></li>
+              </ul>
+            </div>
+            <div class="fig fig-grid">
+              <canvas id="designer-canvas" aria-label="Designer canvas with a lower third. Move the pointer to draw."></canvas>
+              <span class="code-pill mono"><span class="kind">Text</span> · <span class="hl">Headline</span></span>
+            </div>
+          </div>
+
+          <!-- Playout -->
+          <div class="room" role="tabpanel" id="panel-playout" aria-labelledby="tab-playout" hidden>
+            <div class="room-copy">
+              <h3>A real broadcast engine underneath</h3>
+              <p class="sub">Titr drives CasparCG, the open-source playout server, and keys graphics over video and clips.</p>
+              <ul class="feats">
+                <li><h4>Clips under graphics</h4><p>Play video files with graphics on top, looped or once.</p></li>
+                <li><h4>Check output</h4><p>Grab a frame from the engine to see exactly what is going out.</p></li>
+                <li><h4>Start from the browser</h4><p>No console windows for the operator to manage.</p></li>
+              </ul>
+            </div>
+            <div class="fig fig-grid">
+              <canvas id="playout-canvas" aria-hidden="true"></canvas>
+              <pre class="console mono" aria-label="Engine commands"><span class="dim">// channel 1 · 1080p25</span>
+<span class="kw">PLAY</span> 1-10 <span class="str">"opener"</span> <span class="kw">LOOP</span>
+<span class="kw">CG</span> 1-20 <span class="kw">ADD</span> 1 <span class="str">"lower-third"</span> 1
+<span class="kw">PRINT</span> 1
+<span class="ok">→ NDI "Example TV"</span>
+<span class="ok">→ DeckLink 1</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform -->
+    <section class="section section-alt dark" id="platform">
+      <div class="wrap">
+        <p class="eyebrow">Platform</p>
+        <h2>One system instead of <br>three that don't talk</h2>
+        <ol class="ideas">
+          <li>
+            <span class="num mono">1</span>
+            <svg viewBox="0 0 240 200" class="line-fig fig-roles" aria-hidden="true">
+              <circle class="draw" cx="120" cy="100" r="72" pathLength="1"/>
+              <g class="orbit">
+                <path class="spokes draw" pathLength="1" d="M120 28 120 84M188.5 77.8 134 95M162.3 158.2 128 112M77.7 158.2 112 112M51.5 77.8 106 95"/>
+                <circle class="v v-accent" cx="120" cy="28" r="4"/><circle class="v v-green" cx="188.5" cy="77.8" r="4"/>
+                <circle class="v v-amber" cx="162.3" cy="158.2" r="4"/><circle class="v v-white" cx="77.7" cy="158.2" r="4"/><circle class="v v-grey" cx="51.5" cy="77.8" r="4"/>
+              </g>
+              <path class="core draw" pathLength="1" d="M120 84l14 8v16l-14 8-14-8V92zM106 92l14 8 14-8M120 100v16"/>
+            </svg>
+            <h3>One login for the station</h3>
+            <p>Five roles decide which rooms each person sees, from the journalist to the director.</p>
+          </li>
+          <li>
+            <span class="num mono">2</span>
+            <svg viewBox="0 0 240 200" class="line-fig fig-layers" aria-hidden="true">
+              <path class="dash" d="M50 62v80M190 62v80M120 94v80"/>
+              <g class="ly ly-bot"><path class="draw" pathLength="1" d="M120 110l70 32-70 32-70-32z"/><circle class="v v-grey" cx="190" cy="142" r="3.5"/></g>
+              <g class="ly ly-mid"><path class="draw" pathLength="1" d="M120 70l70 32-70 32-70-32z"/><circle class="v v-white" cx="190" cy="102" r="3.5"/></g>
+              <g class="ly ly-top"><path class="draw" pathLength="1" d="M120 30l70 32-70 32-70-32z"/>
+                <circle class="v v-accent" cx="120" cy="30" r="4"/><circle class="v v-accent" cx="190" cy="62" r="4"/><circle class="v v-accent" cx="50" cy="62" r="4"/></g>
+            </svg>
+            <h3>Layers, not one flat picture</h3>
+            <p>Video, graphics and the newsroom strip each sit on their own layer and change without touching the others.</p>
+          </li>
+          <li>
+            <span class="num mono">3</span>
+            <svg viewBox="0 0 240 200" class="line-fig fig-outputs" aria-hidden="true">
+              <g class="orbit">
+                <path class="draw" pathLength="1" d="M120 28l62.4 36v72L120 172l-62.4-36V64z"/>
+                <path class="spokes draw" pathLength="1" d="M120 28v58M182.4 64 132 93M182.4 136 132 107M120 172v-58M57.6 136 108 107M57.6 64 108 93"/>
+                <circle class="v v-accent" cx="120" cy="28" r="4"/><circle class="v v-white" cx="182.4" cy="64" r="4"/><circle class="v v-white" cx="182.4" cy="136" r="4"/>
+                <circle class="v v-green" cx="120" cy="172" r="4"/><circle class="v v-white" cx="57.6" cy="136" r="4"/><circle class="v v-white" cx="57.6" cy="64" r="4"/>
+              </g>
+              <path class="core draw" pathLength="1" d="M120 86l12 7v14l-12 7-12-7V93zM108 93l12 7 12-7M120 100v14"/>
+            </svg>
+            <h3>One program, any output</h3>
+            <p>The same program goes to NDI, DeckLink SDI, a screen window, OBS or vMix.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Local -->
+    <section class="section section-map dark" id="local">
+      <div class="wrap">
+        <h2>Built for the station <br>down the road</h2>
+        <div class="map">
+          <canvas id="map-canvas" aria-label="Map of Mongolia with cities lit, centred on Ulaanbaatar"></canvas>
+          <div class="map-labels" id="map-labels" aria-hidden="true"></div>
+        </div>
+        <div class="blocks">
+          <div><h3><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10a7 7 0 1 0 14 0 7 7 0 0 0-14 0Zm0 0h14M10 3c2 2 2.8 4.4 2.8 7S12 15 10 17c-2-2-2.8-4.4-2.8-7S8 5 10 3Z"/></svg>Runs offline</h3><p>Fonts, templates and data live on the station PC. Losing the internet doesn't take you off air.</p></div>
+          <div><h3><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h14v9H3zM7 16h6M10 13v3"/></svg>One PC, one start file</h3><p>Double-click to start the whole system, then sign in from the browser.</p></div>
+          <div><h3><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 6 3 10l4 4M13 6l4 4-4 4"/></svg>Open engine</h3><p>CasparCG is open source. No licence server and nothing to renew.</p></div>
+          <div><h3><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h5v5H4zM11 4h5v5h-5zM4 11h5v5H4zM11 11h5v5h-5z"/></svg>Hardware panels</h3><p>A keyed REST interface for Stream Deck and Bitfocus Companion.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="section" id="safety">
+      <div class="wrap">
+        <div class="split-head">
+          <div><p class="eyebrow">Safety</p><h2>Nothing goes to air <br>by accident</h2></div>
+          <p class="sub">Live TV forgives nothing. Titr is strict about who can do what, records what was done, and makes the big red button ask twice.</p>
+        </div>
+        <div class="trio">
+          <article>
+            <div class="mock">
+              <div class="mock-card">
+                <div class="mock-search mono">Filter by user, action or item</div>
+                <table class="log">
+                  <thead><tr><th>Time</th><th>Action</th><th>By</th></tr></thead>
+                  <tbody>
+                    <tr><td class="mono">19:58:40</td><td class="mono"><span class="act act-ok">sign in</span></td><td>director</td></tr>
+                    <tr><td class="mono">20:00:04</td><td class="mono"><span class="act act-take">take</span> station-bug</td><td>operator</td></tr>
+                    <tr><td class="mono">20:01:40</td><td class="mono"><span class="act act-take">take</span> lower-third</td><td>operator</td></tr>
+                    <tr><td class="mono">20:03:02</td><td class="mono"><span class="act">clear air</span></td><td>operator</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <h3>Every action on the record</h3>
+            <p>The Activity room shows who signed in and what they did. <span class="dim">Example rows.</span></p>
+          </article>
+          <article>
+            <div class="mock">
+              <div class="mock-card">
+                <table class="matrix" aria-label="Which rooms each role can open">
+                  <thead><tr><th></th><th><span>Graphics</span></th><th><span>Playout</span></th><th><span>Designer</span></th><th><span>Prepare</span></th><th><span>Director</span></th><th><span>Planner</span></th><th><span>Desk</span></th></tr></thead>
+                  <tbody>
+                    <tr><th>Admin</th><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td><td></td><td></td></tr>
+                    <tr><th>Director</th><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td><td class="y"></td><td></td><td></td></tr>
+                    <tr><th>Producer</th><td></td><td></td><td class="y"></td><td class="y"></td><td></td><td class="y"></td><td></td></tr>
+                    <tr><th>Journalist</th><td></td><td></td><td></td><td></td><td></td><td></td><td class="y"></td></tr>
+                    <tr><th>Operator</th><td class="y"></td><td class="y"></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <h3>Each role sees its own rooms</h3>
+            <p>Operators can't edit templates, and journalists can't put anything on air.</p>
+          </article>
+          <article>
+            <div class="mock">
+              <div class="mock-card mock-air">
+                <p class="air-state mono" id="air-state" data-on="true" role="status">ON AIR · Lower third, Newsroom strip</p>
+                <button class="air-btn" id="clear-air" type="button">Clear air</button>
+                <p class="dim small">Try it</p>
+              </div>
+            </div>
+            <h3>Clear air asks twice</h3>
+            <p>One button takes everything off air in every room, after a second click to confirm.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inside -->
+    <section class="section section-tone" id="inside">
+      <div class="wrap">
+        <p class="eyebrow">Inside Titr</p>
+        <h2>The real rooms</h2>
+        <div class="shots">
+          <article><div class="shot"><img src="/titr/shots/graphics.png" width="1584" height="805" alt="Graphics control room with preview and program monitors" loading="lazy"></div><h3>Graphics control</h3><p>Preview and program monitors beside the controls for every graphic in the show.</p></article>
+          <article><div class="shot"><img src="/titr/shots/newsroom.png" width="1584" height="805" alt="Director desk with program, rundown and approvals" loading="lazy"></div><h3>Director desk</h3><p>Program, rundown, approvals and the live strip in one place.</p></article>
+          <article><div class="shot"><img src="/titr/shots/designer.png" width="1584" height="805" alt="Template designer editing a lower third" loading="lazy"></div><h3>Template designer</h3><p>Layers, brand colours and fonts, with the journalist's boxes marked.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing dark" id="run">
+      <div class="wrap closing-row">
+        <div class="closing-copy">
+          <h2>Put your station <br>on <span class="hl">one system</span></h2>
+          <div class="ctas">
+            <a class="btn btn-primary" href="#top">Get started</a>
+            <a class="btn btn-ghost" href="#product">See the rooms</a>
+          </div>
+          <pre class="cmd mono"><span class="dim">&gt;</span> npm start   <span class="dim"># or Start-Titr.bat</span>
+<span class="ok">Running at http://localhost:8200</span></pre>
+          <p class="dim small">Windows · Node.js 24 · the first person creates the admin account</p>
+        </div>
+        <canvas id="key-canvas" class="key" tabindex="0" role="img" aria-label="An isometric Take key. Press it."></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot dark">
+    <div class="wrap foot-row">
+      <a class="logo" href="#top"><span class="tally" aria-hidden="true"></span>Titr</a>
+      <div class="foot-cols">
+        <div><h4>Rooms</h4><a href="#product">Graphics</a><a href="#product">Newsroom</a><a href="#product">Designer</a><a href="#product">Playout</a></div>
+        <div><h4>Platform</h4><a href="#platform">How it fits</a><a href="#local">Local</a><a href="#safety">Safety</a></div>
+        <div><h4>Docs</h4><a href="#run">Run locally</a><a href="#inside">Screenshots</a></div>
+      </div>
+    </div>
+    <div class="wrap foot-legal dim small">© 2026 Titr</div>
+  </footer>
+</body>
+</html>
