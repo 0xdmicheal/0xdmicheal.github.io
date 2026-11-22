@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Даалуу</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 32%22%3E%3Crect width=%2216%22 height=%2232%22 rx=%223%22 fill=%22%23f2ede2%22/%3E%3Ccircle cx=%228%22 cy=%228%22 r=%223%22 fill=%22%23b3121f%22/%3E%3Ccircle cx=%228%22 cy=%2224%22 r=%223%22 fill=%22%23151515%22/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet" />
+    <script type="module" crossorigin src="/daaluu/assets/index-BM2ewagc.js"></script>
+    <link rel="stylesheet" crossorigin href="/daaluu/assets/index-BJSZ8dZ2.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud">
+      <header>
+        <h1>Даалуу</h1>
+        <button id="rank-btn" class="ghost">Эрэмбэ</button>
+      </header>
+      <div id="rank-panel" class="glass" hidden>
+        <p>Хүчтэйгээс сул руу</p>
+        <div id="ranks"></div>
+      </div>
+      <div id="bar" class="glass">
+        <div id="mine" class="seat-inline"></div>
+        <div id="status"></div>
+        <div class="actions">
+          <button id="down" class="ghost" disabled>Нууж хаях</button>
+          <button id="play" disabled>Тавих</button>
+        </div>
+      </div>
+      <div id="result" class="glass" hidden>
+        <h2 id="result-title"></h2>
+        <div id="result-body"></div>
+        <button id="again">Дахин тоглох</button>
+      </div>
+    </div>
+  </body>
+</html>
