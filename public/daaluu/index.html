@@ -4,36 +4,115 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Даалуу</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 32%22%3E%3Crect width=%2216%22 height=%2232%22 rx=%223%22 fill=%22%23f2ede2%22/%3E%3Ccircle cx=%228%22 cy=%228%22 r=%223%22 fill=%22%23b3121f%22/%3E%3Ccircle cx=%228%22 cy=%2224%22 r=%223%22 fill=%22%23151515%22/%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 32%22%3E%3Crect width=%2216%22 height=%2232%22 rx=%223%22 fill=%22%23fbf5ea%22/%3E%3Ccircle cx=%228%22 cy=%228%22 r=%223%22 fill=%22%23c8372d%22/%3E%3Ccircle cx=%228%22 cy=%2224%22 r=%223%22 fill=%22%232b211b%22/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet" />
-    <script type="module" crossorigin src="/daaluu/assets/index-BM2ewagc.js"></script>
-    <link rel="stylesheet" crossorigin href="/daaluu/assets/index-BJSZ8dZ2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet" />
+    <script type="module" crossorigin src="/daaluu/assets/index-BOzajyRp.js"></script>
+    <link rel="stylesheet" crossorigin href="/daaluu/assets/index-B8LuZ426.css">
   </head>
   <body>
     <div id="app"></div>
-    <div id="hud">
-      <header>
-        <h1>Даалуу</h1>
-        <button id="rank-btn" class="ghost">Эрэмбэ</button>
-      </header>
-      <div id="rank-panel" class="glass" hidden>
-        <p>Хүчтэйгээс сул руу</p>
-        <div id="ranks"></div>
+    <div id="labels"></div>
+
+    <!-- top bar -->
+    <header id="top">
+      <h1>Даалуу</h1>
+      <div class="top-actions">
+        <button id="rules-btn" class="soft">Дүрэм</button>
+        <button id="leave-btn" class="soft" hidden>Гарах</button>
       </div>
-      <div id="bar" class="glass">
-        <div id="mine" class="seat-inline"></div>
-        <div id="status"></div>
-        <div class="actions">
-          <button id="down" class="ghost" disabled>Нууж хаях</button>
-          <button id="play" disabled>Тавих</button>
-        </div>
+    </header>
+
+    <!-- home -->
+    <section id="home" class="card screen">
+      <h2>Даалуу</h2>
+      <p class="sub">Монгол даалуу · 4 тоглогч</p>
+      <label class="field">
+        <span>Таны нэр</span>
+        <input id="name" maxlength="16" autocomplete="nickname" placeholder="Нэрээ бичээрэй" />
+      </label>
+      <button id="solo" class="primary">Ботуудтай тоглох</button>
+      <button id="create" class="soft">Өрөө үүсгэх</button>
+      <div class="join">
+        <input id="code" maxlength="4" placeholder="Өрөөний код" autocapitalize="characters" spellcheck="false" />
+        <button id="join" class="soft">Нэгдэх</button>
       </div>
-      <div id="result" class="glass" hidden>
-        <h2 id="result-title"></h2>
-        <div id="result-body"></div>
-        <button id="again">Дахин тоглох</button>
+      <p id="home-msg" class="msg" hidden></p>
+    </section>
+
+    <!-- lobby -->
+    <section id="lobby" class="card screen" hidden>
+      <p class="sub">Өрөөний код</p>
+      <div id="room-code" class="code">····</div>
+      <button id="copy" class="soft small">Холбоос хуулах</button>
+      <ul id="seats"></ul>
+      <p id="lobby-note" class="sub"></p>
+      <button id="start" class="primary" hidden>Эхлэх</button>
+      <button id="lobby-leave" class="link">Гарах</button>
+    </section>
+
+    <!-- game bar -->
+    <div id="bar" class="card" hidden>
+      <div id="mine" class="me"></div>
+      <div id="status"></div>
+      <div class="actions">
+        <button id="down" class="soft" disabled hidden>Нууж хаях</button>
+        <button id="play" class="primary" disabled>Тавих</button>
       </div>
     </div>
+
+    <!-- result -->
+    <section id="result" class="card screen" hidden>
+      <h2 id="result-title"></h2>
+      <div id="result-body"></div>
+      <button id="again" class="primary">Дахин тоглох</button>
+      <p id="result-note" class="sub" hidden>Хост дахин эхлүүлэхийг хүлээж байна…</p>
+      <button id="result-home" class="link">Нүүр хуудас</button>
+    </section>
+
+    <!-- rule book -->
+    <div id="rules" class="sheet" hidden>
+      <article class="card">
+        <button id="rules-close" class="soft close" aria-label="Хаах">Хаах</button>
+        <h2>Дүрэм</h2>
+        <section>
+          <h3>Зорилго</h3>
+          <p>Аль болох олон даалуу хураасан тоглогч ялна.</p>
+        </section>
+        <section>
+          <h3>Даалуу</h3>
+          <p>64 даалуу, 21 төрөл. Эхний 11 төрөл 4 ширхэг, үлдсэн 10 төрөл 2 ширхэг байна. Улаан нүх нь 1 ба 4.</p>
+        </section>
+        <section>
+          <h3>Тараах</h3>
+          <p>Дөрвөн тоглогч тус бүр 16 даалуу авна. Эхлэх тоглогчийг сугалаагаар сонгоно.</p>
+        </section>
+        <section>
+          <h3>Ээлж</h3>
+          <ol>
+            <li><b>Эхлүүлэх.</b> Ээлжтэй тоглогч 1–4 <em>ижил</em> даалуу тавина.</li>
+            <li><b>Дарах.</b> Цагийн зүүний дагуу дараагийнх нь яг тийм тооны ижил даалуу тавина. Илүү өндөр эрэмбэтэй бол тэргүүлнэ.</li>
+            <li><b>Нууж хаях.</b> Дарж чадахгүй бол мөн тооны дурын даалууг доош харуулж хаяна.</li>
+            <li><b>Хураах.</b> Хамгийн өндөр даалуу тавьсан тоглогч ширээн дээрх бүх даалууг хураагаад дараагийн ээлжийг эхлүүлнэ.</li>
+          </ol>
+        </section>
+        <section>
+          <h3>Эрэмбэ</h3>
+          <p>Зүүнээс баруун тийш хүчтэйгээс сул руу.</p>
+          <div id="rank-strip"></div>
+        </section>
+        <section>
+          <h3>Төгсгөл</h3>
+          <p>Бүх даалуу дуусахад хамгийн олон даалуу хураасан тоглогч ялна.</p>
+        </section>
+        <section>
+          <h3>Хэрхэн тоглох</h3>
+          <p>Гартаа байгаа даалуун дээр дарж сонгоод <b>Тавих</b> эсвэл <b>Нууж хаях</b> товчийг дарна. Өрөө үүсгээд кодоо найздаа өгвөл хамт тоглоно; хоосон суудалд бот сууна.</p>
+        </section>
+        <p class="sub fine">Дүрмийн хувилбар 0.1</p>
+      </article>
+    </div>
+
+    <div id="toast" hidden></div>
   </body>
 </html>
