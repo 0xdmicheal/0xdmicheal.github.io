@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Даалуу · Art style demo v0.1</title>
+<meta name="description" content="Daaluu tile set: one Blender model rendered in four art styles.">
+<link rel="icon" href="/favicon.svg">
+<style>
+  :root { --bg:#efeae2; --ink:#221c18; --mute:#665b52; --line:rgba(34,28,24,.1); }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--ink); font:16px/1.5 -apple-system, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  main { max-width:1200px; margin:0 auto; padding:56px 24px 72px; }
+  h1 { font-size:clamp(28px,4vw,44px); letter-spacing:-.02em; line-height:1.1; }
+  .sub { color:var(--mute); margin-top:8px; }
+  .tabs { display:flex; gap:6px; margin:36px 0 16px; padding:4px; background:rgba(255,255,255,.55); border-radius:14px; width:max-content; max-width:100%; overflow-x:auto; backdrop-filter:blur(12px); }
+  .tabs button { border:0; background:none; font:inherit; font-weight:600; color:var(--mute); padding:9px 16px; border-radius:10px; cursor:pointer; white-space:nowrap; transition:background .2s, color .2s; }
+  .tabs button[aria-selected="true"] { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  figure { border-radius:16px; overflow:hidden; background:#5e7b6b; aspect-ratio:16/10; }
+  figure img { width:100%; height:100%; object-fit:cover; display:block; transition:opacity .25s; }
+  .px { image-rendering:pixelated; }
+  .note { color:var(--mute); margin-top:14px; min-height:1.5em; }
+  h2 { font-size:20px; margin:56px 0 16px; letter-spacing:-.01em; }
+  .sheet { border-radius:16px; overflow:auto; background:#fff8; }
+  .sheet img { display:block; width:100%; min-width:900px; }
+  footer { margin-top:56px; color:var(--mute); font-size:14px; }
+  @media (max-width:600px) { main { padding:36px 16px 56px; } figure { border-radius:12px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Даалуу · art style test</h1>
+  <p class="sub">One Blender model of the 60-tile set, rendered in four styles. Demo v0.1.</p>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-s="real">A · Real 3D</button>
+    <button role="tab" aria-selected="false" data-s="toon">B · Toon</button>
+    <button role="tab" aria-selected="false" data-s="pixel">C · Pixel</button>
+    <button role="tab" aria-selected="false" data-s="iso">D · Pixel iso</button>
+  </div>
+  <figure><img id="hero" src="real.webp" alt="Daaluu tiles, real 3D style" width="1600" height="1000"></figure>
+  <p class="note" id="note">Carved bone tiles with soft light. Rendered live in Godot.</p>
+
+  <h2>19 tile types · 60 tiles</h2>
+  <div class="sheet"><img id="sheet" src="real_sheet.webp" alt="All Daaluu tile types" loading="lazy"></div>
+
+  <footer>Даалуу, the Mongolian domino game · <a href="/daaluu/" style="color:inherit">play the prototype</a></footer>
+</main>
+<script>
+  const S = {
+    real:  ["Carved bone tiles with soft light. Rendered live in Godot.", "real_sheet.webp"],
+    toon:  ["Three flat light bands and an ink outline. Reads well on small phones.", "toon_sheet.webp"],
+    pixel: ["Low-resolution render with a reduced palette and a 1 px outline.", "pixel_sheet.webp"],
+    iso:   ["The same pixel style from a true isometric camera.", "pixel_sheet.webp"],
+  };
+  const hero = document.getElementById("hero"), sheet = document.getElementById("sheet"), note = document.getElementById("note");
+  document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+    const s = b.dataset.s, px = s === "pixel" || s === "iso";
+    hero.src = s + ".webp"; hero.alt = "Daaluu tiles, " + b.textContent; hero.classList.toggle("px", px);
+    sheet.src = S[s][1]; sheet.classList.toggle("px", px); note.textContent = S[s][0];
+  });
+</script>
+</body>
+</html>
